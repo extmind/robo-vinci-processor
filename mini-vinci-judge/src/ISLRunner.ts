@@ -38,7 +38,7 @@ const islRunner = async () => {
         const similarityCost = SimilarityChecker.imageDiff(targetPainting, renderedData);
 
         const totalCost = instructionCost + similarityCost;
-        return { "result": "success", "cost": totalCost };
+        return { "result": "success", "cost": totalCost, "isl_cost": instructionCost, "sim_cost": similarityCost };
     } catch (error) {
         return { "result": "error", "err": error.message};
     }
